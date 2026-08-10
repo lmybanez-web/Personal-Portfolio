@@ -5,8 +5,8 @@ export const profile = {
   email: "liomikaeldoral@gmail.com",
   location: "Kidapawan City, Philippines",
   status: "Active Student",
-  heroImage: "public/image/owel.png",
-  cvUrl: "/assets/cv.pdf",
+  heroImage: `${import.meta.env.BASE_URL}assets/owel.png`,
+  cvUrl: `${import.meta.env.BASE_URL}assets/cv.pdf`,
   socials: [
     { label: "GitHub", href: "https://github.com/lmybanez-web", icon: "github" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/lio-mikael-d-yba%C3%B1ez-847a88427/", icon: "linkedin" },
@@ -84,9 +84,9 @@ export const education = [
 ];
 
 export const certifications = [
-  { title: "Networking Basics", category: "Packet Tracer", href: 'https://www.credly.com/badges/fb5e55f9-5dbe-4b7f-b4f8-c551bf79c49d', image: "/assets/portfolio1.png" },
-  { title: "Subnetting Exercise Set", category: "IP Addressing", href: '#', image: "public/images/subnetting.jpg" },
-  { title: "Structured Cabling Lab", category: "Cabling", href: '#', image: "public/images/cabling1.jpg" },
+  { title: "Networking Basics", category: "Packet Tracer", href: 'https://www.credly.com/badges/fb5e55f9-5dbe-4b7f-b4f8-c551bf79c49d', image: `${import.meta.env.BASE_URL}assets/portfolio1.png` },
+  { title: "Subnetting Exercise Set", category: "IP Addressing", href: '#', image: `${import.meta.env.BASE_URL}assets/subnetting.jpg` },
+  { title: "Structured Cabling Lab", category: "Cabling", href: '#', image: `${import.meta.env.BASE_URL}assets/cabling1.jpg` },
 ];
 
 export const contact = {
@@ -110,8 +110,7 @@ export const nav = [
 ];
 export const projects = [
   
-    { title: "Capstone Project", category: "In Progress", href: '#', image: "public/images/capstone.jpg" },
-    { title: "Cisco Packet Tracer Labs", category: "Networking Labs", href: 'https://drive.google.com/drive/folders/1-5nxNNTo-bOIJtVpvrMioZRTgV0VHjVo?usp=sharing', image: "public/images/packettracer.jpg" },
-    { title: "Home Wireless Network - 3 Access Points", category: "Wireless Networking", href: '#', image: "public/images/accesspoint.png" },
-  
+    { title: "Capstone Project", category: "In Progress", href: '#', image: `${import.meta.env.BASE_URL}assets/capstone.jpg` },
+    { title: "Cisco Packet Tracer Labs", category: "Networking Labs", href: 'https://drive.google.com/drive/folders/1-5nxNNTo-bOIJtVpvrMioZRTgV0VHjVo?usp=sharing', image: `${import.meta.env.BASE_URL}assets/packettracer.jpg` },
+    { title: "Home Wireless Network - 3 Access Points", category: "Wireless Networking", href: '#', image: `${import.meta.env.BASE_URL}assets/accesspoint.png` },
 ];
