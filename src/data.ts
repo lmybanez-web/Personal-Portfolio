@@ -5,7 +5,7 @@ export const profile = {
   email: "liomikaeldoral@gmail.com",
   location: "Kidapawan City, Philippines",
   status: "Active Student",
-  heroImage: "/assets/owel.png",
+  heroImage: "/image/owel.png",
   cvUrl: "/assets/cv.pdf",
   socials: [
     { label: "GitHub", href: "https://github.com/lmybanez-web", icon: "github" },
@@ -85,8 +85,8 @@ export const education = [
 
 export const certifications = [
   { title: "Networking Basics", category: "Packet Tracer", href: 'https://www.credly.com/badges/fb5e55f9-5dbe-4b7f-b4f8-c551bf79c49d', image: "/assets/portfolio1.png" },
-  { title: "Subnetting Exercise Set", category: "IP Addressing", href: '#', image: "/assets/subnetting.jpg" },
-  { title: "Structured Cabling Lab", category: "Cabling", href: '#', image: "/assets/cabling1.jpg" },
+  { title: "Subnetting Exercise Set", category: "IP Addressing", href: '#', image: "/images/subnetting.jpg" },
+  { title: "Structured Cabling Lab", category: "Cabling", href: '#', image: "/images/cabling1.jpg" },
 ];
 
 export const contact = {
@@ -110,8 +110,8 @@ export const nav = [
 ];
 export const projects = [
   
-    { title: "Capstone Project", category: "In Progress", href: '#', image: "/assets/capstone.jpg" },
+    { title: "Capstone Project", category: "In Progress", href: '#', image: "/images/capstone.jpg" },
     { title: "Cisco Packet Tracer Labs", category: "Networking Labs", href: 'https://drive.google.com/drive/folders/1-5nxNNTo-bOIJtVpvrMioZRTgV0VHjVo?usp=sharing', image: "/assets/packettracer.jpg" },
-    { title: "Home Wireless Network - 3 Access Points", category: "Wireless Networking", href: '#', image: "/assets/accesspoint.png" },
+    { title: "Home Wireless Network - 3 Access Points", category: "Wireless Networking", href: '#', image: "/images/accesspoint.png" },
   
 ];
