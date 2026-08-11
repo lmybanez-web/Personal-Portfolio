@@ -55,12 +55,6 @@ export const experience = [
     description: "Help organize tech events and workshops, coordinate with fellow officers, and support member onboarding and IT-related activities.",
   },
   {
-    role: "Capstone Project — In Progress",
-    period: "2026 — Present",
-    place: "Notre Dame of Kidapawan College",
-    description: "Currently scoping a networking-focused capstone project. Topic and design details to be finalized this term.",
-  },
-  {
     role: "Networking Labs & Coursework",
     period: "2025 — Present",
     place: "BSIT Program, Notre Dame of Kidapawan College",
@@ -109,8 +103,6 @@ export const nav = [
   { key: "contact", label: "Contact" },
 ];
 export const projects = [
-  
-    { title: "Capstone Project", category: "In Progress", href: '#', image: `${import.meta.env.BASE_URL}assets/capstone.jpg` },
     { title: "Cisco Packet Tracer Labs", category: "Networking Labs", href: 'https://drive.google.com/drive/folders/1-5nxNNTo-bOIJtVpvrMioZRTgV0VHjVo?usp=sharing', image: `${import.meta.env.BASE_URL}assets/packettracer.jpg` },
     { title: "Home Wireless Network - 3 Access Points", category: "Wireless Networking", href: '#', image: `${import.meta.env.BASE_URL}assets/accesspoint.png` },
 ];

@@ -1,17 +1,37 @@
-import type { ReactNode } from "react";
+import { useState } from "react";
 import { Button, Col, Form, Input, Row, message } from "antd";
 import { MailOutlined, PhoneOutlined, EnvironmentOutlined } from "@ant-design/icons";
+import type { ReactNode } from "react";
 import { contact } from "../data";
 
 const { TextArea } = Input;
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/myegweeb";
+
 export default function Contact() {
   const [form] = Form.useForm();
+  const [submitting, setSubmitting] = useState(false);
 
-  const onFinish = (values: unknown) => {
-    console.log("Contact form submitted:", values);
-    message.success("Thanks for reaching out — I'll get back to you soon.");
-    form.resetFields();
+  const onFinish = async (values: { name: string; email: string; subject: string; message: string }) => {
+    setSubmitting(true);
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        message.success("Thanks for reaching out — I'll get back to you soon.");
+        form.resetFields();
+      } else {
+        message.error("Something went wrong sending your message. Please try again.");
+      }
+    } catch {
+      message.error("Something went wrong sending your message. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -50,7 +70,7 @@ export default function Contact() {
               <Form.Item name="message" label="Message" rules={[{ required: true, message: "Please enter a message" }]}>
                 <TextArea rows={5} placeholder="Tell me a bit about your project..." />
               </Form.Item>
-              <Button type="primary" size="large" htmlType="submit">
+              <Button type="primary" size="large" htmlType="submit" loading={submitting}>
                 Send message
               </Button>
             </Form>
@@ -60,9 +80,9 @@ export default function Contact() {
             <p style={{ color: "var(--muted)", fontSize: 15, lineHeight: 1.8 }}>{contact.description}</p>
 
             <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 20 }}>
-              <InfoRow icon={<MailOutlined />} label="Email" value={contact.email} />
-              <InfoRow icon={<PhoneOutlined />} label="Phone" value={contact.phone} />
-              <InfoRow icon={<EnvironmentOutlined />} label="Address" value={contact.address} />
+              <InfoRow icon={<MailOutlined />} value={contact.email} />
+              <InfoRow icon={<PhoneOutlined />} value={contact.phone} />
+              <InfoRow icon={<EnvironmentOutlined />} value={contact.address} />
             </div>
           </Col>
         </Row>
@@ -71,9 +91,9 @@ export default function Contact() {
   );
 }
 
-function InfoRow({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
+function InfoRow({ icon, value }: { icon: ReactNode; value: string }) {
   return (
-    <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
       <div
         style={{
           width: 38,
@@ -88,12 +108,7 @@ function InfoRow({ icon, label, value }: { icon: ReactNode; label: string; value
       >
         {icon}
       </div>
-      <div>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--muted)", textTransform: "uppercase" }}>
-          {label}
-        </div>
-        <div style={{ fontFamily: "var(--font-display)", fontSize: 16, marginTop: 2 }}>{value}</div>
-      </div>
+      <div style={{ fontFamily: "var(--font-display)", fontSize: 16 }}>{value}</div>
     </div>
   );
 }
