@@ -19,6 +19,7 @@ export default function About() {
               icon={<DownloadOutlined />}
               style={{ marginTop: 32 }}
               href={profile.cvUrl}
+              download="Lio_Mikael_Ybanez_CV.pdf"
             >
               Download CV
             </Button>

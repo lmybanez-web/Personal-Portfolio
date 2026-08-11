@@ -6,7 +6,7 @@ export const profile = {
   location: "Kidapawan City, Philippines",
   status: "Active Student",
   heroImage: `${import.meta.env.BASE_URL}assets/owel.png`,
-  cvUrl: `${import.meta.env.BASE_URL}assets/cv.pdf`,
+  cvUrl: `${import.meta.env.BASE_URL}assets/CV.pdf`,
   socials: [
     { label: "GitHub", href: "https://github.com/lmybanez-web", icon: "github" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/lio-mikael-d-yba%C3%B1ez-847a88427/", icon: "linkedin" },
